@@ -1,0 +1,17 @@
+{
+  "name": "notifications",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devinmatte/Notification-Handler.git"
+  },
+  "author": "Devin Matte",
+  "bugs": {
+    "url": "https://github.com/devinmatte/Notification-Handler/issues"
+  },
+  "homepage": "https://devinmatte.com",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-real-favicon": "^0.2.2"
+  }
+}
