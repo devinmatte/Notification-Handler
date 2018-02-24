@@ -1,16 +1,23 @@
 <?php
 
+use Notifications\Models\Subscription;
 use Slim\Http\Request;
 use Slim\Http\Response;
 use Minishlink\WebPush\WebPush;
 use WebDrinkAPI\Utils\Database;
 
 $app->post('/add', function (Request $request, Response $response) {
+    $parsedBody = $request->getParsedBody();
 
     $entityManager = Database::getEntityManager();
 
     // Create new Subscription
-    $subscription = new Subscription();
+    $subscription = new Subscription(
+        $parsedBody['site'],
+        $parsedBody['endpoint'],
+        $parsedBody['userPublicKey'],
+        $parsedBody['userAuthToken']
+    );
 
     // Add to database
     $entityManager->persist($subscription);
